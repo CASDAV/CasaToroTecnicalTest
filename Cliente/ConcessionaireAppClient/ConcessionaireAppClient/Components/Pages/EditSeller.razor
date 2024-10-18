@@ -1,0 +1,31 @@
+﻿@page "/EditSeller/{Id:int}"
+
+<EditForm Model="Model" OnInvalidSubmit="Submit" FormName="EditSeller">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div>
+        <label>
+            Nombre:
+            <InputText @bind-Value="@Model.Name"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Email:
+            <InputText @bind-Value="@Model.Email" />
+        </label>
+    </div>
+    <div>
+        <label>
+            Numero de telefono:
+            <InputNumber @bind-Value="@Model.PhoneNumber" />
+        </label>
+    </div>
+    <div>
+        <label>
+            Ubicación:
+            <InputText @bind-Value="@Model.Location" />
+        </label>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>

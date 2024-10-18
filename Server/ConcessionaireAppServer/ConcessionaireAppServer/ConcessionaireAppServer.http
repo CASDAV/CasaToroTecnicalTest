@@ -1,0 +1,6 @@
+@ConcessionaireAppServer_HostAddress = http://localhost:5269
+
+GET {{ConcessionaireAppServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

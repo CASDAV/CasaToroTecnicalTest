@@ -1,0 +1,12 @@
+﻿@page "/Brands"
+
+<div>
+    <button class="btn btn-primary" @onclick="@NewBrand">Nueva Marca</button>
+</div>
+
+<div>
+    <QuickGrid @ref="Grid" Items="@_BrandResponse">
+        <PropertyColumn Title="Id Marca" Property="@(s => s.Id)" />
+        <PropertyColumn Title="Nombre Marca" Property="@(s => s.Name)" />
+    </QuickGrid>
+</div>

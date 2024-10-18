@@ -1,0 +1,26 @@
+﻿@page "/SellsBySeller"
+
+<div>
+    <label>
+        Cedula Verndedor:
+        <InputNumber Value="Id" />
+    </label>
+    <button class="btn btn-primary" @onclick="@SearchAction">Buscar</button>
+</div>
+
+
+@if (_id.HasValue)
+{
+    <div>
+        <QuickGrid Items="@_salesResponse">
+            <PropertyColumn Title="Id de venta" Property="@(s => s.Id)" />
+            <PropertyColumn Title="Id Vehiculo" Property="@(s => s.VehicleId)" />
+            <PropertyColumn Title="Cedula Vendedor" Property="@(s => s.SellerId)" />
+            <PropertyColumn Title="Fecha de venta" Property="@(s => s.SaleDate)" />
+            <PropertyColumn Title="Monto de venta" Property="@(s => s.SaleAmount)" />
+            <PropertyColumn Title="Nombre del comprador" Property="@(s => s.CustomerName)" />
+            <PropertyColumn Title="Email del comprador" Property="@(s => s.CustomerEmail)" />
+            <PropertyColumn Title="Numero de telefono del comprador" Property="@(s => s.CustomerPhone)" />
+        </QuickGrid>
+    </div>
+}

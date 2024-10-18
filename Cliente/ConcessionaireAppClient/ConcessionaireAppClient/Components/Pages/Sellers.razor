@@ -1,0 +1,15 @@
+﻿@page "/Sellers"
+
+<div>
+    <QuickGrid @ref="Grid" Items="@_sellersResponse">
+        <PropertyColumn Property="@(s => s.Id)" />
+        <PropertyColumn Property="@(s => s.Name)" />
+        <PropertyColumn Property="@(s => s.Email)" />
+        <PropertyColumn Property="@(s => s.PhoneNumber)" />
+        <PropertyColumn Property="@(s => s.Location)" />
+        <PropertyColumn Property="@(s => s.JoinDate)" />
+        <TemplateColumn Title="Acciones">
+            <button class="btn btn-primary" @onclick="@(() => EditSeller(context.Id))">Eliminar</button>
+        </TemplateColumn>
+    </QuickGrid>
+</div>

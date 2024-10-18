@@ -1,0 +1,13 @@
+﻿@page "/NewBrand"
+
+<EditForm Model="Model" OnInvalidSubmit="Submit" FormName="EditSeller">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div>
+        <label>
+            Nombre:
+            <InputText @bind-Value="@Model.Name" />
+        </label>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>

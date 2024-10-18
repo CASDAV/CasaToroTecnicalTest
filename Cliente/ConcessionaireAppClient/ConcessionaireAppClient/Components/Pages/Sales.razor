@@ -1,0 +1,17 @@
+﻿@page "/Sales"
+
+<div>
+    <QuickGrid @ref="Grid" Items="@_salesResponse">
+        <PropertyColumn Property="@(s => s.Id)" />
+        <PropertyColumn Property="@(s => s.VehicleId)" />
+        <PropertyColumn Property="@(s => s.SellerId)" />
+        <PropertyColumn Property="@(s => s.SaleDate)" />
+        <PropertyColumn Property="@(s => s.SaleAmount)" />
+        <PropertyColumn Property="@(s => s.CustomerName)" />
+        <PropertyColumn Property="@(s => s.CustomerEmail)" />
+        <PropertyColumn Property="@(s => s.CustomerPhone)" />
+        <TemplateColumn Title="Acciones">
+            <button class="btn btn-danger" @onclick="@(() => DeleteSale(context.Id))">Eliminar</button>
+        </TemplateColumn>
+    </QuickGrid>
+</div>
